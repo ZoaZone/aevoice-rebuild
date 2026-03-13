@@ -1,0 +1,33 @@
+{
+  "$schema": "../gen/schemas/desktop-schema.json",
+  "identifier": "default",
+  "description": "Default capabilities for AEVOICE desktop app",
+  "windows": ["main"],
+  "permissions": [
+    "core:default",
+    "core:app:default",
+    "core:window:default",
+    "core:webview:default",
+    "core:path:default",
+    "core:event:default",
+    "core:tray:default",
+    "shell:allow-open",
+    "http:default",
+    "http:allow-fetch",
+    "http:allow-fetch-send",
+    "fs:default",
+    "notification:default",
+    "notification:allow-send-notification",
+    "store:default",
+    "store:allow-get",
+    "store:allow-set",
+    "store:allow-save",
+    "store:allow-load",
+    "process:default",
+    "process:allow-exit",
+    "autostart:default",
+    "autostart:allow-enable",
+    "autostart:allow-disable",
+    "autostart:allow-is-enabled"
+  ]
+}

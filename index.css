@@ -156,3 +156,173 @@ button:focus-visible {
     @apply bg-background text-foreground;
   }
 }
+
+/* Sree Widget Animations */
+@layer components {
+  .sree-widget {
+    animation: sree-fade-in 0.3s ease-out;
+  }
+
+  @keyframes sree-fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .sree-mini-monitor {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .sree-avatar {
+    transition: transform 0.2s ease-out;
+  }
+
+  .sree-avatar:hover {
+    transform: scale(1.05);
+  }
+
+  .sree-mic-button {
+    transition: all 0.2s ease-out;
+  }
+
+  .sree-mic-button:hover {
+    transform: scale(1.05);
+  }
+
+  /* Floating widget animations */
+  .sree-floating-enter {
+    animation: sree-float-in 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  @keyframes sree-float-in {
+    from {
+      opacity: 0;
+      transform: scale(0.95) translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+  }
+
+  /* Minimize animation */
+  .sree-minimize {
+    animation: sree-minimize 0.3s ease-out;
+  }
+
+  @keyframes sree-minimize {
+    from {
+      transform: scale(1);
+      opacity: 1;
+    }
+    to {
+      transform: scale(0.3);
+      opacity: 0;
+    }
+  }
+
+  /* Expand animation */
+  .sree-expand {
+    animation: sree-expand 0.3s ease-out;
+  }
+
+  @keyframes sree-expand {
+    from {
+      transform: scale(0.3);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
+  /* Pulse animation for listening state */
+  .sree-pulse {
+    animation: sree-pulse 1.5s ease-in-out infinite;
+  }
+
+  @keyframes sree-pulse {
+    0%, 100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.7;
+      transform: scale(1.05);
+    }
+  }
+
+  /* Bounce animation for new messages */
+  .sree-bounce {
+    animation: sree-bounce 0.5s ease-out;
+  }
+
+  @keyframes sree-bounce {
+    0% {
+      transform: translateY(10px);
+      opacity: 0;
+    }
+    50% {
+      transform: translateY(-5px);
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  /* Shimmer effect for demo mode */
+  .sree-shimmer {
+    background: linear-gradient(
+      90deg,
+      rgba(6, 182, 212, 0) 0%,
+      rgba(6, 182, 212, 0.2) 50%,
+      rgba(6, 182, 212, 0) 100%
+    );
+    background-size: 200% 100%;
+    animation: sree-shimmer 2s ease-in-out infinite;
+  }
+
+  @keyframes sree-shimmer {
+    0% {
+      background-position: 200% 0;
+    }
+    100% {
+      background-position: -200% 0;
+    }
+  }
+
+  /* Typing indicator animation */
+  .sree-typing-dot {
+    animation: sree-typing 1.4s ease-in-out infinite;
+  }
+
+  .sree-typing-dot:nth-child(1) {
+    animation-delay: 0s;
+  }
+
+  .sree-typing-dot:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+
+  .sree-typing-dot:nth-child(3) {
+    animation-delay: 0.4s;
+  }
+
+  @keyframes sree-typing {
+    0%, 60%, 100% {
+      transform: translateY(0);
+      opacity: 0.7;
+    }
+    30% {
+      transform: translateY(-10px);
+      opacity: 1;
+    }
+  }
+}
